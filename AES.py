@@ -2,14 +2,11 @@ import sys
 from BitVector import *
 
 AES_modulus = BitVector(bitstring='100011011')
-subBytesTable = []                                                  # for encryption
-invSubBytesTable = []   
+subBytesTable = [] # for encryption
+invSubBytesTable = [] 
 
 class AES():
-    def __init__(self, keyfile:str) -> None:
-        # Read the key from the file
-        with open(keyfile, 'r') as file:
-            key = file.read()
+    def __init__(self, key:str) -> None:
         # Convert the key into a BitVector
         key_bv = BitVector(textstring = key)
         # Generate the key schedule
